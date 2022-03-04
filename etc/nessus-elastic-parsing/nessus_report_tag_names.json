@@ -1,0 +1,47 @@
+{
+  "HOST_END":{
+    "ecs_field": "event.end", "datatype":"timestamp"
+    },
+  "HOST_START":{
+    "ecs_field": "event.start", "datatype":"timestamp"
+    },
+  "netbios-name":{
+    "ecs_field": "host.hostname", "datatype":"string"
+    },
+  "host-ip":{
+    "ecs_field": ["host.ip", "destination.ip", "related.ip"], "datatype": "IPv4"
+    },
+  "host-fqdn":{
+    "ecs_field": "host.name", "datatype":"string"
+    },
+  "mac-address":{
+    "ecs_field": ["host.mac", "destination.mac"], "datatype":"string_array"
+    },
+  "os":{
+    "ecs_field": "os.family", "datatype":"string"
+    },
+  "operating-system":{
+    "ecs_field": "os.name", "datatype":"string"
+    },
+  "Credentialed_Scan":{
+    "ecs_field": "nessus.credentialed_scan", "datatype":"boolean"
+    },
+  "policy-used":{
+    "ecs_field": "nessus.policy", "datatype":"string"
+    },
+  "reportname":{
+    "ecs_field": "nessus.report.name", "datatype":"string"
+    },
+  "nessusfolder":{
+    "ecs_field": "nessus.report.folder", "datatype":"string"
+    },
+  "status":{
+    "ecs_field": "nessus.scan.status", "datatype":"string"
+    },
+  "uuid":{
+    "ecs_field": "nessus.scan.uuid", "datatype":"string"
+    },
+  "history_id":{
+    "ecs_field": "nessus.scan.history_id", "datatype":"string"
+    }
+}
