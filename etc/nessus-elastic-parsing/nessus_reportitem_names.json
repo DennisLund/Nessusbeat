@@ -1,0 +1,107 @@
+{
+  "description":{
+    "ecs_field": "nessus.plugin.description", "datatype":"string"
+    },
+  "plugin_modification_date":{
+    "ecs_field": "nessus.plugin.modification_date", "datatype":"timestamp"
+    },
+  "plugin_type":{
+    "ecs_field": "nessus.plugin.type", "datatype":"string"
+    },
+  "plugin_output":{
+    "ecs_field": "nessus.plugin.output", "datatype":"string"
+    },
+  "cve":{
+    "ecs_field": "nessus.vulnerability.cve", "datatype":"string_array"
+    },
+  "cvss3_base_score":{
+    "ecs_field": "nessus.vulnerability.cvss3.base_score", "datatype":"double"
+    },
+  "cvss3_temporal_score":{
+    "ecs_field": "nessus.vulnerability.cvss3.temporal_score", "datatype":"double"
+    },
+  "cvss_base_score":{
+    "ecs_field": "nessus.vulnerability.cvss.base_score", "datatype":"double"
+    },
+  "cvss_temporal_score":{
+    "ecs_field": "nessus.vulnerability.cvss.temporal_score", "datatype":"double"
+    },
+  "risk_factor":{
+    "ecs_field": "nessus.vulnerability.risk_factor", "datatype":"string"
+    },
+  "see_also":{
+    "ecs_field": "nessus.vulnerability.info", "datatype":"string_array"
+    },
+  "solution":{
+    "ecs_field": "nessus.vulnerability.solution", "datatype":"string"
+    },
+  "vuln_publication_date":{
+    "ecs_field": "nessus.vulnerability.publication_date", "datatype":"timestamp"
+    },
+  "exploit_available":{
+    "ecs_field": "nessus.exploit.available", "datatype":"boolean"
+    },
+  "exploit_framework_canvas":{
+    "ecs_field": "nessus.exploit.framework.canvas", "datatype":"boolean"
+    },
+  "exploit_framework_core":{
+    "ecs_field": "nessus.exploit.framework.core", "datatype":"boolean"
+    },
+  "exploit_framework_metasploit":{
+    "ecs_field": "nessus.exploit.framework.metasploit", "datatype":"boolean"
+    },
+  "exploitability_ease":{
+    "ecs_field": "nessus.vulnerability.exploitability_ease", "datatype":"string"
+    },
+  "exploited_by_malware":{
+    "ecs_field": "nessus.vulnerability.exploited_by_malware", "datatype":"boolean"
+    },
+  "msft":{
+    "ecs_field": "nessus.exploit.name", "datatype":"string"
+    },
+  "in_the_news":{
+    "ecs_field": "nessus.exploit.in_the_news", "datatype":"boolean"
+    },
+  "metasploit_name":{
+    "ecs_field": "nessus.exploit.framework.metasploit_name", "datatype":"string"
+    },
+  "mskb":{
+    "ecs_field": "nessus.patch.name", "datatype":"string_array"
+    },
+  "patch_publication_date":{
+    "ecs_field": "nessus.patch.publication_date", "datatype":"timestamp"
+    },
+  "fname":{
+    "ecs_field": "nessus.plugin.name", "datatype":"string"
+  },
+  "iavb":{
+    "ecs_field": "nessus.vulnerability.bulletin", "datatype":"string"
+  },
+  "plugin_publication_date":{
+    "ecs_field": "nessus.plugin.publication_date", "datatype":"timestamp"
+  },
+  "synopsis":{
+    "ecs_field": "nessus.vulnerability.synopsis", "datatype":"string"
+  },
+  "cvss_score_rationale":{
+    "ecs_field": "nessus.vulnerability.cvss.score_rationale", "datatype":"string"
+  },
+  "cvss_score_source":{
+    "ecs_field": "nessus.vulnerability.cvss.score_source", "datatype":"string"
+  },
+  "age_of_vuln":{
+    "ecs_field": "nessus.vulnerability.age", "datatype":"string"
+  },
+  "cvssV3_impactScore":{
+    "ecs_field": "nessus.vulnerability.cvss3.impact_score", "datatype":"double"
+  },
+  "exploit_code_maturity":{
+    "ecs_field": "nessus.exploit.code_maturity", "datatype":"string"
+  },
+  "product_coverage":{
+    "ecs_field": "nessus.vulnerability.product_coverage", "datatype":"string"
+  },
+  "vpr_score":{
+    "ecs_field": "nessus.vulnerability.priority_rating", "datatype":"double"
+  }
+}

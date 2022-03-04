@@ -1,0 +1,26 @@
+{
+  "protocol":{
+    "ecs_field": "network.transport", "datatype":"string"
+    },
+  "port":{
+    "ecs_field": "destination.port", "datatype":"integer"
+    },
+  "svc_name":{
+    "ecs_field": "network.protocol", "datatype":"string"
+    },
+  "name":{
+    "ecs_field": "nessus.report.name", "datatype":"string"
+    },
+  "pluginID":{
+    "ecs_field": "nessus.plugin.id", "datatype":"integer"
+    },
+  "severity":{
+    "ecs_field": "nessus.severity", "datatype":"integer"
+    },
+  "pluginName":{
+    "ecs_field": "nessus.plugin.name", "datatype":"string"
+    },
+  "pluginFamily":{
+    "ecs_field": "nessus.plugin.family", "datatype":"string"
+    }
+}
