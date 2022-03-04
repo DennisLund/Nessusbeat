@@ -1,0 +1,24 @@
+nessusbeat.settings:
+  - url: "https://127.0.0.1:8834"
+  - access-key: ""
+  - secret-key: ""
+  - folders: ["My Scans", "Servers", "webservers"]
+  - status: ["completed"]
+  - nessus-already-indexed-file: "/usr/share//nessusbeat/scan-data/indexed-scans.txt"
+
+service.settings:
+  - run-frequency: 3600
+  - debug_mode: True
+
+elasticsearch.settings:
+  - hosts: ["192.168.1.12", "192.168.1.13", "192.168.1.14"]
+  - port: 9200
+  - username: "ingest-admin"
+  - password: ""
+  - ssl_cert_validation: False
+  - cert_ca_path: "/etc/nessusbeat/certs/elasticsearch-ca.pem"
+  - auth_enabled: True
+  - ssl_enabled: True
+  - index_name: "nessusbeat-000001"
+#  ingest_pipeline: ""
+  - mapping_path: "/etc/nessusbeat/nessusbeat.json"
