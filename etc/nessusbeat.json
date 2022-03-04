@@ -1,0 +1,385 @@
+{
+    "mappings" : {
+      "properties" : {
+        "destination" : {
+          "properties" : {
+            "ip" : {
+              "type" : "ip"
+            },
+            "mac" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            },
+            "port" : {
+              "type" : "integer"
+            }
+          }
+        },
+        "event" : {
+          "properties" : {
+            "end" : {
+              "type" : "date",
+              "format" : "yyyy/MM/dd HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss||yyyy-MM-dd HH:mm:ss||'yyyy-MM-dd HH:mm:ss'||yyyy/MM/dd||epoch_millis"
+            },
+            "start" : {
+              "type" : "date",
+              "format" : "yyyy/MM/dd HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss||yyyy-MM-dd HH:mm:ss||'yyyy-MM-dd HH:mm:ss'||yyyy/MM/dd||epoch_millis"
+            }
+          }
+        },
+        "host" : {
+          "properties" : {
+            "hostname" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            },
+            "ip" : {
+              "type" : "ip"
+            },
+            "mac" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            }
+          }
+        },
+        "nessus" : {
+          "properties" : {
+            "credentialed_scan" : {
+              "type" : "boolean"
+            },
+            "exploit" : {
+              "properties" : {
+                "available" : {
+                  "type" : "boolean"
+                },
+                "exploitability_ease" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                },
+                "exploited_by_malware" : {
+                  "type" : "boolean"
+                },
+                "framework" : {
+                  "properties" : {
+                    "canvas" : {
+                      "type" : "boolean"
+                    },
+                    "core" : {
+                      "type" : "boolean"
+                    },
+                    "metasploit" : {
+                      "type" : "boolean"
+                    },
+                    "metasploit_name" : {
+                      "type" : "text",
+                      "fields" : {
+                        "keyword" : {
+                          "type" : "keyword",
+                          "ignore_above" : 256
+                        }
+                      }
+                    }
+                  }
+                },
+                "in_the_news" : {
+                  "type" : "boolean"
+                },
+                "name" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                }
+              }
+            },
+            "patch" : {
+              "properties" : {
+                "name" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                },
+                "publication_date" : {
+                  "type" : "date",
+                  "format" : "yyyy/MM/dd HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss||yyyy-MM-dd HH:mm:ss||yyyy/MM/dd||epoch_millis"
+                }
+              }
+            },
+            "plugin" : {
+              "properties" : {
+                "description" : {
+                  "type" : "text"
+                },
+                "family" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                },
+                "id" : {
+                  "type" : "integer"
+                },
+                "modification_date" : {
+                  "type" : "date",
+                  "format" : "yyyy/MM/dd HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss||yyyy-MM-dd HH:mm:ss||yyyy/MM/dd||epoch_millis"
+                },
+                "name" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                },
+                "output" : {
+                  "type" : "text"
+                },
+                "type" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                }
+              }
+            },
+            "policy" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            },
+            "report" : {
+              "properties" : {
+                "name" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                }
+              }
+            },
+            "scan" : {
+              "properties" : {
+                "history_id" : {
+                  "type" : "integer"
+                },
+                "status" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                },
+                "timestamp" : {
+                  "type" : "date",
+                  "format" : "yyyy/MM/dd HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss||yyyy-MM-dd HH:mm:ss||yyyy/MM/dd||epoch_millis"
+                },
+                "uuid" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                }
+              }
+            },
+            "severity" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            },
+            "vulnerability" : {
+              "properties" : {
+                "cve" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                },
+                "cvss" : {
+                  "properties" : {
+                    "base_score" : {
+                      "type" : "text",
+                      "fields" : {
+                        "keyword" : {
+                          "type" : "keyword",
+                          "ignore_above" : 256
+                        }
+                      }
+                    },
+                    "temporal_score" : {
+                      "type" : "text",
+                      "fields" : {
+                        "keyword" : {
+                          "type" : "keyword",
+                          "ignore_above" : 256
+                        }
+                      }
+                    }
+                  }
+                },
+                "cvss3" : {
+                  "properties" : {
+                    "base_score" : {
+                      "type" : "text",
+                      "fields" : {
+                        "keyword" : {
+                          "type" : "keyword",
+                          "ignore_above" : 256
+                        }
+                      }
+                    },
+                    "temporal_score" : {
+                      "type" : "text",
+                      "fields" : {
+                        "keyword" : {
+                          "type" : "keyword",
+                          "ignore_above" : 256
+                        }
+                      }
+                    }
+                  }
+                },
+                "info" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                },
+                "publication_date" : {
+                  "type" : "date",
+                  "format" : "yyyy/MM/dd HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss||yyyy-MM-dd HH:mm:ss||yyyy/MM/dd||epoch_millis"
+                },
+                "risk_factor" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                },
+                "solution" : {
+                  "type" : "text"
+                },
+                "uid" : {
+                  "type" : "text",
+                  "fields" : {
+                    "keyword" : {
+                      "type" : "keyword",
+                      "ignore_above" : 256
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "network" : {
+          "properties" : {
+            "protocol" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            },
+            "transport" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            }
+          }
+        },
+        "os" : {
+          "properties" : {
+            "family" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            },
+            "name" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword",
+                  "ignore_above" : 256
+                }
+              }
+            }
+          }
+        },
+        "related" : {
+          "properties" : {
+            "ip" : {
+              "type" : "ip"
+            }
+          }
+        }
+      }
+    }
+}
