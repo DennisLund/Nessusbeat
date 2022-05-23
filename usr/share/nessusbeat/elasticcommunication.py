@@ -171,3 +171,8 @@ class elasticcommunication(object):
       return status
     except Exception as err:
       print ("NessusBeat-elastic:: Elasticsearch client ERROR in create_index_with_mapping: ", err)
+
+  #EXPERIMENTAL. NOT TESTED! MIGHT NOT BE NEEDED!!!
+  def close_con(self, elastic_client):
+    elastic_client.transport.close()
+
