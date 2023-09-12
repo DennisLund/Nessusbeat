@@ -29,7 +29,7 @@ class Config(object):
   nessus_wanted_folders = []
   nessus_wanted_statuses = []
   nessus_already_indexed_file = ""
-  
+
   service_run_frequency = 3600
   debug_mode = False
 
@@ -147,23 +147,23 @@ def check_status(status):
 if __name__== "__main__":
   print("Nessusbeat: Nessusbeat service started")
   config = Config()
-  nessus_coms = nessuscommunication()
-  elastic_coms = elasticcommunication()
   headers = {"Content-Type":"application/json","x-apikeys":"accessKey={};secretKey={}".format(config.nessus_access_key, config.nessus_secret_key)}
-  nessus_folders = nessus_coms.get_nessus_folders(headers, config.nessus_url)
   check_indexed_scans_exists()
-  elastic_client = elastic_coms.establish_connection()
-  elastic_index_check = elastic_coms.check_index_exists(elastic_client)
-  if not elastic_index_check:
-    elastic_coms.create_index_with_mapping(elastic_client)
 
   while True:
     print("Nessusbeat: Run loop started")
+    nessus_coms = nessuscommunication()
+    elastic_coms = elasticcommunication()
+    nessus_folders = nessus_coms.get_nessus_folders(headers, config.nessus_url)
+    elastic_client = elastic_coms.establish_connection()
+    elastic_index_check = elastic_coms.check_index_exists(elastic_client)
+    if not elastic_index_check:
+      elastic_coms.create_index_with_mapping(elastic_client)
     if nessus_folders["folders"] is not None:
       for folder in nessus_folders["folders"]:
         if check_folder(folder["name"]):
           nessus_scans = nessus_coms.get_nessus_scans(headers, folder["id"], config.nessus_url)
-          if nessus_scans["scans"] is not None:
+          if isinstance(nessus_scans, dict) and nessus_scans["scans"] is not None:
             for scan in nessus_scans["scans"]:
               scan_id = scan["id"]
               nessus_scan = nessus_coms.get_nessus_scan(headers, scan_id, config.nessus_url)
